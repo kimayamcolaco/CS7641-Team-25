@@ -28,7 +28,7 @@
 <p align="center">
     <img height="300px" src="assets/dataset.jpg">
 </p>
-<p>We would divide the data such that y represents win/loss for each game, and the initial X represents all other game statistics (eg. field goals attempted (FGA), 3-point percent (3P%), total points (PTS) etc). We will run <b>unsupervised</b> k – means clustering with k = 2, and some combination of the game statistics as the features. We will repeat this process with a different combination of features each time until we determine the optimal set of features that maximize the correlation between the two clusters and wins/losses. In other words, we want our two generated clusters to correspond strongly to the W/L column and find the corresponding set of optimal features that accomplishes this.
+<p>We would divide the data such that y represents win/loss for each game, and the initial X represents all other game statistics (eg. field goals attempted (FGA), 3-point percent (3P%), total points (PTS) etc). We will run **unsupervised** k – means clustering with k = 2, and some combination of the game statistics as the features. We will repeat this process with a different combination of features each time until we determine the optimal set of features that maximize the correlation between the two clusters and wins/losses. In other words, we want our two generated clusters to correspond strongly to the W/L column and find the corresponding set of optimal features that accomplishes this.
 </p> 
 <p>Based on the optimal set of features, we can use <b>supervised learning</b> models like logistic regression or decision trees to predict how team A will perform against team B. for each of these methods we can calculate accuracy to see which model works best.
 </p>
