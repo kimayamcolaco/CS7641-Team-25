@@ -11,7 +11,7 @@
 </p>
   
 <p align="center">
-    <img height="300px" src="assets/logo.png">
+    <img height="300px" src="assets/logo.jpg">
     <img height="300px" src="assets/teams.jpg">
 </p>
 <h3>
