@@ -41,11 +41,11 @@
 </p>
 <h3>
 <a id="refs" class="anchor" href="#refs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h3>
-  <p>1. Mikołajec, Kazimierz et al. “Game Indicators Determining Sports Performance in the NBA.” Journal of human kinetics vol. 37 145-51. 5 Jul. 2013, doi:10.2478/hukin-2013-0035 (link: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796832/)
+  <p>1. Mikołajec, Kazimierz et al. “Game Indicators Determining Sports Performance in the NBA.” Journal of human kinetics vol. 37 145-51. 5 Jul. 2013, doi:10.2478/hukin-2013-0035 (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796832/">link</a>)
   </p>
-  <p> 2. Thabtah, F., Zhang, L. & Abdelhamid, N. NBA Game Result Prediction Using Feature Analysis and Machine Learning. Ann. Data. Sci. 6, 103–116 (2019) (link: https://doi.org/10.1007/s40745-018-00189-x)
+  <p> 2. Thabtah, F., Zhang, L. & Abdelhamid, N. NBA Game Result Prediction Using Feature Analysis and Machine Learning. Ann. Data. Sci. 6, 103–116 (2019) (<a href="https://doi.org/10.1007/s40745-018-00189-x">link</a>)
   </p>
-  <p> 3. Jingru Wang and Qishi Fan 2021 J. Phys.: Conf. Ser. 1802 032036 (link: https://iopscience.iop.org/article/10.1088/1742-6596/1802/3/032036)
+  <p> 3. Jingru Wang and Qishi Fan 2021 J. Phys.: Conf. Ser. 1802 032036 (<a href="https://iopscience.iop.org/article/10.1088/1742-6596/1802/3/032036">link</a>)
   </p>
 
 <h3>
