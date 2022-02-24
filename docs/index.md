@@ -8,7 +8,7 @@
 
 <h3>
 <a id="intro" class="anchor" href="#intro" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction & Background</h3>
-<p>For our project, we aim to predict which teams will make the NBA playoffs and which teams are likely to win the championship based on mid-season performances as well as advanced statistical models. The NBA consists of 30 teams who are split into 2 conferences where 8 out of 15 teams in each conference advance to the playoffs. Our proposed model will help predict the final NBA standings for the regular season and help make predictions regarding the playoffs. The dataset we will primarily use is <a href="https://www.nba.com/stats/teams/boxscores/"> NBA Box Score </a> which contains box score stats for every game so far this NBA season as well as stats for previous seasons. We can filter by metrics in order to predict the winners.
+<p>For our project, we aim to predict which teams will make the NBA playoffs and which teams are likely to win the championship based on mid-season performances as well as advanced statistical models. The NBA consists of 30 teams who are split into 2 conferences where 8 out of 15 teams in each conference advance to the playoffs. Our proposed model will help predict the final NBA standings for the regular season and help make predictions regarding the playoffs. The dataset we will primarily use is <a href="https://www.nba.com/stats/teams/boxscores/"> NBA Box Scores </a> which contains box score stats for every game so far this NBA season as well as stats for previous seasons. We can filter by metrics in order to predict the winners.
 </p>
 <h3>
 <a id="problem_definition" class="anchor" href="#problem_definition" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Problem Definition</h3>
@@ -22,25 +22,13 @@
 </p>
 <h3>
 <a id="refs" class="anchor" href="#refs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h3>
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://support.github.com/contact">contact support</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
+  <p>1. Mikołajec, Kazimierz et al. “Game Indicators Determining Sports Performance in the NBA.” Journal of human kinetics vol. 37 145-51. 5 Jul. 2013, doi:10.2478/hukin-2013-0035 (link: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796832/)
+  </p>
+  <p> 2. Thabtah, F., Zhang, L. & Abdelhamid, N. NBA Game Result Prediction Using Feature Analysis and Machine Learning. Ann. Data. Sci. 6, 103–116 (2019) (link: https://doi.org/10.1007/s40745-018-00189-x)
+  </p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">NBA Predictor maintained by <a href="https://github.gatech.edu/CS7641-Group-25">CS7641-Group-25</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
+<h3>
+<a id="timeline" class="anchor" href="#timeline" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Proposed Timeline</h3>
+  <p>View our proposed project timeline <a href="https://gtvault-my.sharepoint.com/:x:/g/personal/kcolaco3_gatech_edu/Ed745itnB4BNrrMAhuP-s-cBbbwPmu2WzhvwIJb2FZzEMQ?e=TfflJm/"> here </a></p>
   </body>
 </html>
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kimayamcolaco/CS7641-Team-25/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
