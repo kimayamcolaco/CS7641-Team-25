@@ -22,23 +22,74 @@
     <img height="300px" src="assets/structure.jpg">
 </p>
   
- <h3>
-<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methods</h3>
-<p>Below is a snapshot of the box score dataset we have access to. </p>
+<h3>
+<a id="data_collection" class="anchor" href="#data_collection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data Collection</h3>
+<p>For the unsupervised learning part of the project, we sourced the data from CSV files from ProBasketballReference and used a python script to clean and parse this data. We then used Pandas to read the CSV file and picked relevant features. </p>
+
+<p>Our test data was sourced from the 2020-2021 NBA season so we could test how accurate our models would be at predicting the NBA playoff teams, by comparing our results to actual playoff results from this season. The complete dataset is shown in the table below. To run our model, we focussed on the team that actually made the playoffs (represented by an *) and used this to clean our dataset to get only the relevant statistics. </p>
+  
 <p align="center">
-    <img height="300px" src="assets/dataset.jpg">
+    <img height="300px" src="assets/stats.jpg">
 </p>
-<p>We would divide the data such that y represents win/loss for each game, and the initial X represents all other game statistics (eg. field goals attempted (FGA), 3-point percent (3P%), total points (PTS) etc). We will run <b>unsupervised</b> k – means clustering with k = 2, and some combination of the game statistics as the features. We will repeat this process with a different combination of features each time until we determine the optimal set of features that maximize the correlation between the two clusters and wins/losses. In other words, we want our two generated clusters to correspond strongly to the W/L column and find the corresponding set of optimal features that accomplishes this.
-</p> 
-<p>Based on the optimal set of features, we can use <b>supervised learning</b> models like logistic regression or decision trees to predict how team A will perform against team B. for each of these methods we can calculate accuracy to see which model works best.
+
+<p>We then selected key features that would be most relevant to assessing a team’s performance and plotted these values for each of the teams in our focussed dataset. The bar graphs below show the plot for wins (W), total points (PTS), 3 points (3P) and assists (AST) as well as our analysis of the same. </p>
+
+<h2><a id="wins" class="anchor" href="#wins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Wins (W)</h2>
+<p align="center">
+    <img height="300px" src="assets/wins_graph.jpg">
 </p>
-<p>Using the model above, we can predict the total number of games each team would win out of their remaining regular season games and create final standing. We can repeat the process for each playoff matchup until we find a winner. We can also test our model on known results from previous years but running it on the regular season box scores and comparing our predictions to actual outcomes. 
+  
+<p> From the graph above, based on the number of games won, we can infer that the Lakers, Hawks, Grizzilies, Jazz, Blazers, Knicks, 76ers, Nuggets, Nets, Bucks, Clippers, and Suns could make the playoffs. These teams seem to win more games than the other teams. </p>
+
+<h2><a id="pts" class="anchor" href="#pts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Total Points (PTS)</h2>
+<p align="center">
+    <img height="300px" src="assets/pts_graph.jpg">
 </p>
+  
+<p> The variance in the graph above is low, but the Jazz, Blazers, Wizards, Pacers, 76ers, Nuggets, Nets, Bucks, Clippers, Pelicans, and Suns seem to score more points than other teams, indicating they are playoff caliber teams. </p>
+
+<h2><a id="3ps" class="anchor" href="#3ps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3 Pointers (3P)</h2>
+<p align="center">
+    <img height="300px" src="assets/3p_graph.jpg">
+</p>
+  
+<p> Based on the chart above, we can infer that the Jazz, Blazers, Raptors, Nuggets, Nets, Mavericks, Bucks, Celtics, Clippers, Warriors, and Suns score more 3-pointers than other teams. Usually, playoff-caliber teams have better 3-pointers made than the non-playoff teams. </p>
+
+<h2><a id="ast" class="anchor" href="#ast" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Assists (AST)</h2>
+<p align="center">
+    <img height="300px" src="assets/ast_graph.jpg">
+</p>
+  
+<p> Based on the chart above, we can infer that the Warriors, Pacers, Suns, Rockets, Bulls, Grizzlies, 76ers, and Nets have higher assist percentages than other teams. Usually, playoff-caliber teams do better in this statistic. </p>
+  
+<h3>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methods</h3>
+
+ <h2><a id="unsupervised" class="anchor" href="#unsupervised" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unsupervised Learning</h2>
+  <p>Our first method was to perform Principal Component Analysis (PCA) to reduce the dimensions of our data and pick out the optimal features that maximize the variance of our data. After running PCA on the dataset, we plot a heatmap or correlation matrix (see result analysis section) to get a vision of the most impactful features and the less impactful features from our dataset. </p>
+
+<p>After running PCA, we performed Gaussian Mixture Model (GMM) on the dataset and separated the data into 2 clusters: playoff teams and non-playoff teams. The idea with the Gaussian Mixture Model is to create 2 clusters and decide the playoff and the non-playoff clusters based on the means of the data received from our feature selection using PCA. </p> 
+<p>However, there can only be 16 playoff teams, no more, no less. In the case that the playoff cluster has more than 16 teams, we can use the responsibility measures (assignments) of each data point and move the data points (teams) that have the least responsibility assignment of all the points in the cluster, out of the cluster until there are only 16 teams remaining. We can do this because the points belong the least to this cluster than other points in the playoff cluster.</p>
+<p>In the case that the playoff cluster has less than 16 teams, we can move the least assigned data points (teams) in the non-playoff teams cluster to the playoff cluster until there are 16 teams.</p>
+<p> The next section contains further details on our results and analysis of this model. </p>
   
 <h3>
 <a id="results" class="anchor" href="#results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Potential Results and Discussion</h3>
-<p>Our model should be able to compare 2 teams playing against each other and predict who will win that game, and be able to compare multiple teams and predict the overall standings of all teams for playoffs. This is essentially the NBA playoffs bracket predicted by our model. Alternatively, we could use ranges instead of definite placings to allow for a little more flexibility (predicting “Top 2”, “Bottom 2” rather than predicting an exact placing between 1 - 2). This way, we could have a better starting point for our results, and can fine-tune our parameters accordingly. Our expected accuracy is approximately 70% for exact placings, and approximately 90% for ranges.
+<h2><a id="unsupervised" class="anchor" href="#unsupervised" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unsupervised Learning</h2>
+<p>After the data collection portion which consisted of gathering the data, filtered based on teams that made the playoffs as our test data and plotting the bar graphs for teams based on important features, we could move on to our first model- Principal Component Analysis (PCA). </p>
+ <p> After running PCA on the data, we concluded that 3 principal components contribute to 93% of the variance of our dataset signaling that those components are well descriptive to signify a teams playoff status. </p>
+<p align="center">
+    <img height="300px" src="assets/pca_plot.jpg">
 </p>
+ <p> We then plotted a heatmap to signify which components are most indicative in signifying a playoff team.  </p>
+<p align="center">
+    <img height="300px" src="assets/heatmap.jpg"></p>
+ <p> The following data below is the principal_components of our dataset and the relevant features associated with each component.   </p>
+<p align="center">
+    <img height="300px" src="assets/component_data.jpg">
+</p>
+ <p> There are many ways to select features from the principal components. In this case, the features were selected from each of the three principal components where the features contributed at least 10% or more to each component. In other words, feature 22 contributed 68% to component 1 and we keep selecting features starting 22 to 24 since 1 only contributes 6% to the first component. Once the condition is violated, we move on to the second component and repeat. We do this for all components and the selected features are shown below.  </p>
+
 <h3>
 <a id="refs" class="anchor" href="#refs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h3>
   <p>1. Mikołajec, Kazimierz et al. “Game Indicators Determining Sports Performance in the NBA.” Journal of human kinetics vol. 37 145-51. 5 Jul. 2013(<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796832/">link</a>)
