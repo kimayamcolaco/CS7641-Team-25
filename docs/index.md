@@ -29,7 +29,7 @@
 <p>Our test data was sourced from the 2020-2021 NBA season so we could test how accurate our models would be at predicting the NBA playoff teams, by comparing our results to actual playoff results from this season. The complete dataset is shown in the table below. To run our model, we focussed on the team that actually made the playoffs (represented by an *) and used this to clean our dataset to get only the relevant statistics. </p>
   
 <p align="center">
-    <img height="300px" src="assets/stats.jpg">
+    <img height="600px" src="assets/stats.jpg">
 </p>
 
 <p>We then selected key features that would be most relevant to assessing a team’s performance and plotted these values for each of the teams in our focussed dataset. The bar graphs below show the plot for wins (W), total points (PTS), 3 points (3P) and assists (AST) as well as our analysis of the same. </p>
