@@ -83,7 +83,7 @@
 </p>
  <p> We then plotted a heatmap to signify which components are most indicative in signifying a playoff team.  </p>
 <p align="center">
-    <img height="300px" src="assets/heatmap.jpg"></p>
+    <img height="500px" src="assets/heatmap.jpg"></p>
  <p> The following data below is the principal_components of our dataset and the relevant features associated with each component.   </p>
 <p align="center">
     <img height="300px" src="assets/component_data.jpg">
