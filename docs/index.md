@@ -85,8 +85,20 @@
  </p>
  <p>The next section contains further details on the results from this model and an analysis of the same.
  </p>
-
   
+</a>Supervised Learning</h3>
+<p>For the supervised learning part of the project, we downloaded CSV files from NBA box scores and then used a python script to clean and parse the data. We then perform feature selection on the data and pick the relevant features.
+ </p>
+ 
+ <p>Next, we split the training and testing data using a 70-30 split and scale the selected features using a feature scaler. After splitting the training data and testing data, we start to implement our SVM training. First, we fit the SVM classifier using a linear kernel. Then, we use the classifier to help predict our accuracy on the test dataset. 
+ </p>
+ 
+ <p>Next, we tuned the hyperparameters using GridSearch and fit the data based on the tuned c and gamma values. Now, we select the distributions we plan to fit into our tournament generator to help simulate the playoffs. 
+ </p>
+ 
+ <p>Next, we use the tournament simulator method written to help simulate a sample playoffs based on the matchups selected. From the tournament simulator, we get the win probabilities for each team in every round and use that to help simulate the playoffs and get our winner. 
+ </p>
+ 
 <h2>
 <a id="results" class="anchor" href="#results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Results and Discussion</h2>
 
@@ -142,7 +154,68 @@ After organizing the data, we found and separating into clusters, we found our p
 <p> Our GMM model accurately predicted 93.75% of the NBA playoff teams during the NBA 2020-2021 season. Our model inaccurately predicted that the Golden State Warriors would make the playoffs, but instead the Washington Wizards made the playoffs. </p>
 
 <h3>
-<a id="refs" class="anchor" href="#refs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h3>
+<a id="ul" class="anchor" href="#ul" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supervised Learning</h3>
+
+<p> In order to predict playoff matchups, we must select features that best help simulate a specific series matchups. From our specific feature selection algorithms, the following features were best selected to help predict the outcome of a game. </p>
+
+<p align="center">
+    <img height="100px" src="assets/supervised_feat.jpg">
+</p>
+
+<p>
+We then fit the SVM classifier based on our training data and calculated the accuracy based on the test data. Our training data consists of all NBA games since 2004 and based on our metrics, we get an accuracy score for our test data. Based on our test data, we get an accuracy score of approximately 0.6976. 
+</p>
+<p>
+We then tuned the c and gamma hyperparameters using GridSearch to help improve our validation accuracy. 
+</p>
+
+<p align="center">
+    <img height="100px" src="assets/svm_hparams.jpg">
+</p>
+
+<p> After simulating the games, we received the following data for the winners of each matchup during each round. </p>
+
+<p align="center">
+    <img height="100px" src="assets/winners.jpg">
+</p>
+<p> Based on the data above and the bracket below that shows the matchups for the 2020-2021 playoffs, we simulated the winner of each round of the playoffs. </p>
+
+<p align="center">
+    <img height="100px" src="assets/brackets.jpg">
+</p>
+<p> Since the bracket starts with 16 teams, we have 4 rounds to the NBA playoffs. Below is a graph of each teams win probabilities as they advance through the rounds.  </p>
+
+<p align="center">
+    <img height="100px" src="assets/win_plot.jpg">
+</p>
+<p> Based on the above graph, we see that the Atlanta Hawks have the highest chance to win the NBA championship according to our simulations.   </p>
+<p>
+We found that the best parameters for the SVM model were C = 1 and gamma = 1 as those parameters produced a 83% accuracy on the validation set. 
+</p>
+
+<p align="center">
+    <img height="100px" src="assets/svm_params.jpg">
+</p>
+<p> Since we tested our data on the 2020-2021 NBA playoffs, we were able to see how accurate our simulations were by comparing with the actual NBA bracket for the same playoffs. Below is the actual NBA 2020-2021 playoff bracket.
+ </p>
+<p align="center">
+    <img height="100px" src="assets/actual_results.jpg">
+</p>
+<p> 
+Based on our simulation percentages per round and the percentage chance for each team to win every round, below was the predicted bracket that our simulations returned for the 2020-2021 playoffs. 
+ </p>
+ <p align="center">
+    <img height="100px" src="assets/pred_results.jpg">
+</p>
+All predictions marked in red signify a incorrect prediction made by our model, and all predictions in green signify a correct prediction by our model. For example, the Phoenix Suns made the NBA finals, but the simulations we ran had the Los Angeles Lakers defeating them in the first round. The Washington Wizards were labeled as an incorrect prediction due to the fact that our prior GMM model did not have the Wizards making the playoffs, however they did, contributing to the incorrectly picked matchup.
+ </p>
+
+<h2>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Conclusion</h2>
+<p> Across both of our models, the SVM and GMM, we attempted to help predict which team is going to win the NBA championship. Our GMM algorithm was highly accurate as it accurately predicted 93.75% of the playoff teams. However, after running the SVM on the playoff data and running simulations, we found that the SVM did not do as well of a job of predicting the NBA champion. Based on our simulations, the Phoenix Suns were eliminated in the first round and in reality, they made the NBA Finals. The inaccuracies of the SVM model could be related to many changes throughout the NBA season that could affect a team’s performance on the playoff stage. For example, during last year’s playoffs, the Los Angeles Lakers suffered an injury to one of their best players after going up 2-1 against the Phoenix Suns in the best of 7 series. This shows that although our models did not result in the best data, they can still help determine which teams are likely to go the farthest and which teams are not. </p>
+
+<h2>
+<a id="refs" class="anchor" href="#refs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h2>
   <p>1. Mikołajec, Kazimierz et al. “Game Indicators Determining Sports Performance in the NBA.” Journal of human kinetics vol. 37 145-51. 5 Jul. 2013(<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796832/">link</a>)
   </p>
   <p> 2. Thabtah, F., Zhang, L. & Abdelhamid, N. NBA Game Result Prediction Using Feature Analysis and Machine Learning. Ann. Data. Sci. 6, 103–116 (2019) (<a href="https://doi.org/10.1007/s40745-018-00189-x">link</a>)
