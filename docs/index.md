@@ -197,13 +197,12 @@ We found that the best parameters for the SVM model were C = 1 and gamma = 1 as 
 <p align="center">
     <img height="160px" src="assets/svm_params.jpg">
 </p>
-<p> Since we tested our data on the 2020-2021 NBA playoffs, we were able to see how accurate our simulations were by comparing with the actual NBA bracket for the same playoffs. Below is the actual NBA 2020-2021 playoff bracket.
+<p> Based on our simulation percentages per round and the percentage chance for each team to win every round, below was the predicted bracket that our simulations returned for the 2020-2021 playoffs. 
  </p>
 <p align="center">
     <img height="600px" src="assets/actual_results.jpg">
 </p>
-<p> 
-Based on our simulation percentages per round and the percentage chance for each team to win every round, below was the predicted bracket that our simulations returned for the 2020-2021 playoffs. 
+<p> Since we tested our data on the 2020-2021 NBA playoffs, we were able to see how accurate our simulations were by comparing with the actual NBA bracket for the same playoffs. Below is the actual NBA 2020-2021 playoff bracket.
  </p>
  <p align="center">
     <img height="600px" src="assets/pred_results.jpg">
